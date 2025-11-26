@@ -17,5 +17,8 @@ Build docker image using the DockerFile: `docker build -t inflation-dashboard-ap
 
 The flask app uses port 5050: `docker run -p 5050:5050 inflation-dashboard-app`
 
+### **Docker compose**
+`docker-compose up --build`
+
 ## Disclaimer:
 All the data are fake. 
