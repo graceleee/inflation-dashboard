@@ -3,7 +3,11 @@ A containerized microservices observability stack designed to ingest, monitor, a
 Tools: **Python (Flask)**, **Docker**, **Prometheus**, and **Grafana**.
 
 ## How to install and run:
-### **Local**
+`docker-compose up --build`
+
+The Flask app exposes port 5050
+
+### **To run the Flask app locally**
 ```
 cd app/
 python3 -m venv venv
@@ -17,8 +21,11 @@ Build docker image using the DockerFile: `docker build -t inflation-dashboard-ap
 
 The flask app uses port 5050: `docker run -p 5050:5050 inflation-dashboard-app`
 
-### **Docker compose**
-`docker-compose up --build`
+
+## The Prometheus interface
+Go to http://localhost:9010
+
+To query all metrics: `{__name__=~".+"}`
 
 ## Disclaimer:
 All the data are fake. 
