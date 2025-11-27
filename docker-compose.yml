@@ -1,7 +1,16 @@
 version: '3.8'
 
 services:
+  # Python
   app:
     build: ./app 
     ports:
       - "5050:5050"
+
+  # Prometheus
+  prometheus:
+    image: prom/prometheus
+    volumes:
+      - ./prometheus/prometheus.yml:/etc/prometheus/prometheus.yml
+    ports:
+      - "9010:9090" # 9090 not available so use 9010, forward to the container's 9090 because prom is listening at 9090
